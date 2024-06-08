@@ -1,4 +1,4 @@
-package kz.runtime.spring_practice_kinopoisk.springpracticekinopoisk;
+package kz.runtime.spring_practice_kinopoisk;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
