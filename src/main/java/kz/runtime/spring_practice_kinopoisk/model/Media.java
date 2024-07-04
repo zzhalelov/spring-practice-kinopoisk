@@ -1,6 +1,6 @@
 package kz.runtime.spring_practice_kinopoisk.model;
 
-public class Movie {
+public class Media {
     private String title;
     private Type type;
     private String releaseYear;
