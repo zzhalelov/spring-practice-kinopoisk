@@ -6,7 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class MovieController {
+public class MediaController {
     @GetMapping("/movies")
     public String showForm(Model model) {
         Media movie = new Media();
