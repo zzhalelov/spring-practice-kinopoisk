@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class MediaController {
-    @GetMapping("/movies")
+    @GetMapping("/medias")
     public String showForm(Model model) {
-        Media movie = new Media();
-        return "index";
+        Media media = new Media();
+        return "medias";
     }
 }
