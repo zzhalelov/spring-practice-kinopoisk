@@ -19,24 +19,4 @@ public class Genre {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     String name;
-
-    //
-
-
-//    Genre
-//    ACTION,
-//    ADVENTURE,
-//    ANIME,
-//    COMEDY,
-//    DRAMA,
-//    FEATURE,
-//    CRIME,
-//    DOCUMENTARY,
-//    HISTORICAL,
-//    HORROR,
-//    MUSICAL,
-//    ROMCOM,
-//    SCIFI,
-//    SHORT,
-//    THRILLER
 }

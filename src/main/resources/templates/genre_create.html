@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-<form action="genres/create" method="post" th:object="${genre}">
+<form action="/genres/create" method="post" th:object="${genre}">
     <p>Название жанра</p>
     <input type="text" th:field="*{name}">
     <button type="submit">Сохранить</button>
