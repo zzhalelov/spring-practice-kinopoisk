@@ -16,6 +16,9 @@ create table age_categories
     name varchar(255) not null unique
 );
 
+alter table age_categories
+    add column description varchar(255) unique;
+
 create table countries
 (
     id   serial8 primary key,
