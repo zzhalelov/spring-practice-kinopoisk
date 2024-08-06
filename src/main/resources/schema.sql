@@ -36,3 +36,9 @@ create table medias
     description     text                                not null,
     url_media       varchar(255)                        not null
 );
+
+create table actors
+(
+    id   serial8 primary key,
+    name varchar(255)
+);
