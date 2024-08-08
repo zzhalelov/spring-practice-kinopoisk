@@ -4,6 +4,8 @@ create table types
     name varchar(255) not null unique
 );
 
+drop table types cascade;
+
 create table genres
 (
     id   serial8 primary key,
@@ -28,7 +30,7 @@ create table countries
 create table medias
 (
     id              serial8 primary key,
-    type_id         int8 references types (id)          not null,
+    type_id         text                                not null,
     release_year    int                                 not null,
     country_id      int8 references countries (id)      not null,
     genre_id        int8 references genres (id)         not null,
