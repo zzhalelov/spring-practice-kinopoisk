@@ -9,12 +9,13 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Table(name = "actors")
+@Table(name = "age_categories")
 @Entity
 @ToString
-public class Actor {
+public class AgeCategory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String name;
+    private String description;
 }
