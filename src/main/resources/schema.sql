@@ -30,13 +30,14 @@ create table countries
 create table medias
 (
     id              serial8 primary key,
-    type_id         text                                not null,
-    release_year    int                                 not null,
-    country_id      int8 references countries (id)      not null,
-    genre_id        int8 references genres (id)         not null,
-    age_category_id int8 references age_categories (id) not null,
-    description     text                                not null,
-    url_media       varchar(255)                        not null
+    title           varchar(255) not null,
+    type_id         text,
+    release_year    int,
+    country_id      int8 references countries (id),
+    genre_id        int8 references genres (id),
+    age_category_id int8 references age_categories (id),
+    description     text,
+    url_media       varchar(255)
 );
 
 create table actors

@@ -1,6 +1,5 @@
 package kz.runtime.spring_practice_kinopoisk.service.impl;
 
-import kz.runtime.spring_practice_kinopoisk.model.Genre;
 import kz.runtime.spring_practice_kinopoisk.model.Media;
 import kz.runtime.spring_practice_kinopoisk.model.Type;
 import kz.runtime.spring_practice_kinopoisk.repository.*;
@@ -20,25 +19,17 @@ public class MediaServiceImpl implements MediaService {
     private final AgeCategoryRepository ageCategoryRepository;
 
     @Override
-    public void create(Media media,
-                       Type type,
-                       long genreId,
-                       long countryId,
-                       long ageCategoryId,
-                       List<String> actors) {
-        //находим тип медиа по id
-
-
-        //устанавливаем тип для медиа
-
-        //находим жанр по id
-        Genre genre = genreRepository.findById(genreId).orElseThrow();
-
-        //устанавливаем жанр для медиа
-        media.setGenre(genre);
-
-        //сохраняем медиа в БД
+    public void create(Media media) {
         mediaRepository.save(media);
+    }
 
+    @Override
+    public List<Media> findAll() {
+        return mediaRepository.findAll();
+    }
+
+    @Override
+    public Media findById(Long id) {
+        return mediaRepository.findById(id).orElseThrow(() -> new RuntimeException("Media not found"));
     }
 }

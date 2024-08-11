@@ -7,7 +7,7 @@
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
         body {
-            background-color: #031623;
+            background-color: #f7f8f8;
             margin-top: 20px;
         }
 
@@ -38,13 +38,38 @@
             <span class="fs-4">Kinopoisk KZ</span>
         </a>
         <ul class="nav nav-pills">
-<!--            <li class="nav-item"><a href="" class="nav-link">Каталог</a></li>-->
-<!--            <li class="nav-item"><a href="" class="nav-link">Вход</a></li>-->
-<!--            <li class="nav-item"><a href="" class="nav-link">Регистрация</a></li>-->
+            <!--            <li class="nav-item"><a href="" class="nav-link">Каталог</a></li>-->
+            <!--            <li class="nav-item"><a href="" class="nav-link">Вход</a></li>-->
+            <!--            <li class="nav-item"><a href="" class="nav-link">Регистрация</a></li>-->
         </ul>
     </header>
 
     <div class="content">
+        <h1>Все медиа</h1>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Название медиа</th>
+                <th>Тип</th>
+                <th>Жанр</th>
+                <th>Год выпуска</th>
+                <th>Страна</th>
+                <th>Возрастная категория</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="media: ${medias}">
+                <td><a th:href="@{|medias/${media.getId()}|}" th:text="${media.title}"></a></td>
+                <td th:href="@{|medias/${media.getId()}|}" th:text="${media.type}"></td>
+                <td th:text="${media.genre.name}"></td>
+                <td th:href="@{|medias/${media.getId()}|}" th:text="${media.releaseYear}"></td>
+                <td th:href="@{|medias/${media.getId()}|}" th:text="${media.country}"></td>
+                <td th:href="@{|medias/${media.getAgeCategory()}|}" th:text="${media.getAgeCategory()}"></td>
+            </tr>
+            </tbody>
+        </table>
+
+        <a href="/medias/create">Добавить медиа</a>
     </div>
 </div>
 

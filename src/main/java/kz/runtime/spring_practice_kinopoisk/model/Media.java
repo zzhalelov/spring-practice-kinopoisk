@@ -19,9 +19,16 @@ public class Media {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     String title;
+
+    @Enumerated(EnumType.ORDINAL)
+    @Column(name = "type_id")
     Type type;
+
     int releaseYear;
-    String country;
+
+    @ManyToOne
+    @JoinColumn(name = "country_id")
+    Country country;
 
     @ManyToOne
     @JoinColumn(name = "genre_id")

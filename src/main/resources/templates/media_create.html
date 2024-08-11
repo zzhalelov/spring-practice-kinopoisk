@@ -10,6 +10,34 @@
         Наименование медиа
         <input id="title" th:field="*{title}">
     </label>
+
+    <p>Тип</p>
+    <select th:field="*{type}">
+        <option th:value="${T(kz.runtime.spring_practice_kinopoisk.model.Type).MOVIE}">Фильм</option>
+        <option th:value="${T(kz.runtime.spring_practice_kinopoisk.model.Type).SERIES}">Сериал</option>
+    </select>
+
+    <p>Жанр</p>
+    <select th:field="*{genre.id}">
+        <option th:each="genre: ${genres}" th:value="${genre.id}" th:text="${genre.name}"></option>
+    </select>
+
+    <label for="releaseYear">
+        Год выпуска
+        <input id="releaseYear" th:field="*{releaseYear}">
+    </label>
+
+    <p>Страна производства</p>
+    <select th:field="*{country.id}">
+        <option th:each="country: ${countries}" th:value="${country.id}" th:text="${country.name}"></option>
+    </select>
+
+    <p>Возрастная категория</p>
+    <select th:field="*{ageCategory.id}">
+        <option th:each="ageCategory: ${ageCategories}" th:value="${ageCategory.id}"
+                th:text="${ageCategory.name}"></option>
+    </select>
+
     <button type="submit">Сохранить</button>
 
 </form>
