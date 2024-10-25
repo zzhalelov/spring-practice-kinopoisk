@@ -29,12 +29,14 @@ public class CountryServiceImpl implements CountryService {
     }
 
     @Override
-    public void update(long id, Country updatedEntity) {
-
+    public void update(long id, Country updatedCountry) {
+        Country existingCountry = countryRepository.findById(id).orElseThrow(() -> new RuntimeException("Country not found"));
+        existingCountry.setName(updatedCountry.getName());
+        countryRepository.save(existingCountry);
     }
 
     @Override
     public void deleteById(long id) {
-
+        countryRepository.deleteById(id);
     }
 }

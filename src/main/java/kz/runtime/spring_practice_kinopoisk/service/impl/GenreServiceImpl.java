@@ -20,7 +20,7 @@ public class GenreServiceImpl implements GenreService {
 
     @Override
     public Genre findById(Long id) {
-        return null;
+        return genreRepository.findById(id).orElse(null);
     }
 
     @Override
@@ -29,12 +29,14 @@ public class GenreServiceImpl implements GenreService {
     }
 
     @Override
-    public void update(long id, Genre updatedEntity) {
-
+    public void update(long id, Genre updatedGenre) {
+        Genre existingGenre = genreRepository.findById(id).orElseThrow(() -> new RuntimeException("Genre not found"));
+        existingGenre.setName(updatedGenre.getName());
+        genreRepository.save(existingGenre);
     }
 
     @Override
     public void deleteById(long id) {
-
+        genreRepository.deleteById(id);
     }
 }
