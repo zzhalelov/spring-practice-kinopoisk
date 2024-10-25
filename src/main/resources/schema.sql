@@ -45,3 +45,17 @@ create table actors
     id   serial8 primary key,
     name varchar(255)
 );
+
+CREATE TABLE crew
+(
+    id       BIGSERIAL PRIMARY KEY,
+    director VARCHAR(255) NOT NULL,
+    media_id BIGINT REFERENCES medias (id)
+);
+
+CREATE TABLE crew_actors
+(
+    crew_id  BIGINT REFERENCES crew (id),
+    actor_id BIGINT REFERENCES actors (id),
+    PRIMARY KEY (crew_id, actor_id)
+);

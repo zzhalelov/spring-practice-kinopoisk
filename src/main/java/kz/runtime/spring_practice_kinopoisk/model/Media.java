@@ -38,6 +38,10 @@ public class Media {
     @JoinColumn(name = "age_category_id")
     AgeCategory ageCategory;
 
+    @OneToOne
+    @JoinColumn(name = "id")
+    Crew crew;
+
     String description;
     String urlMedia;
 }
